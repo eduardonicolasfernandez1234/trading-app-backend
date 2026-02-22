@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+from core.managers import SoftDeleteManager
 from core.querysets import SoftDeleteQuerySet
 from core.utils.current_user import get_current_user
 
@@ -37,7 +38,7 @@ class BaseModel(models.Model):
     is_deleted = models.BooleanField(default=False)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
-    objects = models.Manager()
+    objects = SoftDeleteManager()
     all_objects = SoftDeleteQuerySet.as_manager()
 
     class Meta:
