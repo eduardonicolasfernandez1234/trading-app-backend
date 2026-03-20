@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.telethon.dev)",
+      "Bash(.venv/Scripts/pip show:*)",
+      "Bash(.venv/Scripts/pip install:*)",
+      "Bash(.venv/Scripts/python manage.py check)",
+      "Bash(.venv/Scripts/python manage.py makemigrations signals)",
+      "Bash(.venv/Scripts/python -c \"from signals.models import RawTelegramMessage; print\\(RawTelegramMessage\\)\")",
+      "Bash(set DJANGO_SETTINGS_MODULE=trading_back.settings)",
+      "Bash(.venv/Scripts/python manage.py makemigrations signals --verbosity 2)",
+      "Bash(.venv/Scripts/python -c \"import django; import os; os.environ[''DJANGO_SETTINGS_MODULE'']=''trading_back.settings''; django.setup\\(\\); from django.apps import apps; m = apps.get_app_config\\(''signals''\\).get_models\\(\\); print\\([x.__name__ for x in m]\\)\")",
+      "Bash(.venv/Scripts/python manage.py showmigrations signals)",
+      "Bash(.venv/Scripts/python manage.py show_urls)",
+      "Bash(.venv/Scripts/python -c \"import django; import os; os.environ[''''DJANGO_SETTINGS_MODULE'''']=''''trading_back.settings''''; django.setup\\(\\); from django.urls import reverse; print\\(reverse\\(''''telegram-connect''''\\)\\); print\\(reverse\\(''''telegram-disconnect''''\\)\\); print\\(reverse\\(''''telegram-status''''\\)\\)\")",
+      "Bash(.venv/Scripts/python -c \"import os; os.environ[''DJANGO_SETTINGS_MODULE'']=''trading_back.settings''; import django; django.setup\\(\\); from django.urls import reverse; endpoints = [''telegram-connect'',''telegram-disconnect'',''telegram-status'',''telegram-request-code'',''telegram-verify-code'',''telegram-verify-2fa'']; [print\\(reverse\\(e\\)\\) for e in endpoints]\")",
+      "Bash(.venv/Scripts/python manage.py makemigrations telegram_control signals)",
+      "Bash(.venv/Scripts/python manage.py migrate)",
+      "Bash(.venv/Scripts/python -c \":*)"
+    ]
+  }
+}

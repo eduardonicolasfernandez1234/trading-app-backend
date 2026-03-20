@@ -6,6 +6,7 @@ from signals.viewsets import (
     TradingSignalViewSet,
     SignalTakeProfitViewSet,
     SignalContextViewSet,
+    RawTelegramMessageViewSet,
 )
 
 router = DefaultRouter()
@@ -14,5 +15,6 @@ router.register(r'signal-providers', SignalProviderViewSet)
 router.register(r'trading-signals', TradingSignalViewSet)
 router.register(r'signal-take-profits', SignalTakeProfitViewSet)
 router.register(r'signal-contexts', SignalContextViewSet)
+router.register(r'raw-messages', RawTelegramMessageViewSet)
 
 urlpatterns = router.urls

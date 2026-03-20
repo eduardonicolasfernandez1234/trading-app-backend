@@ -24,4 +24,5 @@ urlpatterns = [
     path('api/assets/', include('assets.urls')),
     path('api/trades/', include('trades.urls')),
     path('api/analytics/', include('analytics.urls')),
+    path('api/telegram/', include('telegram_control.urls')),
 ]

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'assets',
     'trades',
     'analytics',
+    'telegram_control',
 ]
 
 MIDDLEWARE = [
@@ -174,6 +175,12 @@ SIMPLE_JWT = {
     'USER_ID_FIELD': 'id',
     'USER_ID_CLAIM': 'user_id',
 }
+
+# Telegram integration
+TELEGRAM_API_ID = int(os.getenv("API_ID", 0))
+TELEGRAM_API_HASH = os.getenv("API_HASH", "")
+TELEGRAM_PHONE_NUMBER = os.getenv("PHONE_NUMBER", "")
+TELEGRAM_SESSION_NAME = "telegram_session"
 
 CORS_ALLOW_ALL_ORIGINS = True
 
