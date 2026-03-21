@@ -20,13 +20,6 @@ class TradeClose(BaseModel):
     - Pertenece a un Trade.
     """
 
-    CLOSE_REASON_CHOICES = (
-        ('tp', 'Take Profit'),
-        ('sl', 'Stop Loss'),
-        ('manual', 'Manual'),
-        ('bot', 'Bot'),
-    )
-
     close_price = models.DecimalField(max_digits=12, decimal_places=5)
     lot_size = models.DecimalField(max_digits=10, decimal_places=2, help_text='Cantidad de lote cerrada en este evento')
     closed_at = models.DateTimeField()

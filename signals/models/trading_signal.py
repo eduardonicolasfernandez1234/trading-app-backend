@@ -45,8 +45,8 @@ class TradingSignal(BaseModel):
         max_length=10,
         choices=DirectionChoices.choices
     )
-    entry_price = models.DecimalField(max_digits=12, decimal_places=5)
-    stop_loss = models.DecimalField(max_digits=12, decimal_places=5)
+    entry_price = models.DecimalField(max_digits=12, decimal_places=5, null=True, blank=True)
+    stop_loss = models.DecimalField(max_digits=12, decimal_places=5, null=True, blank=True)
     execution_type = models.CharField(
         max_length=10,
         choices=ExecutionTypeChoices.choices,

@@ -16,7 +16,8 @@
       "Bash(.venv/Scripts/python -c \"import os; os.environ[''DJANGO_SETTINGS_MODULE'']=''trading_back.settings''; import django; django.setup\\(\\); from django.urls import reverse; endpoints = [''telegram-connect'',''telegram-disconnect'',''telegram-status'',''telegram-request-code'',''telegram-verify-code'',''telegram-verify-2fa'']; [print\\(reverse\\(e\\)\\) for e in endpoints]\")",
       "Bash(.venv/Scripts/python manage.py makemigrations telegram_control signals)",
       "Bash(.venv/Scripts/python manage.py migrate)",
-      "Bash(.venv/Scripts/python -c \":*)"
+      "Bash(.venv/Scripts/python -c \":*)",
+      "Bash(.venv/Scripts/python manage.py makemigrations accounts signals trades analytics)"
     ]
   }
 }

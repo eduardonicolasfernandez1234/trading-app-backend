@@ -62,6 +62,13 @@ class AnalyticsSnapshot(BaseModel):
         on_delete=models.CASCADE,
         related_name='analytics_snapshots'
     )
+    trade_account = models.ForeignKey(
+        'trades.TradeAccount',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='analytics_snapshots'
+    )
 
     def __str__(self):
         return f"{self.user.email} - {self.snapshot_type} ({self.period_start})"

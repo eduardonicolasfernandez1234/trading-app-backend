@@ -1,7 +1,7 @@
 from django.db import models
 
 from core.models.base_model import BaseModel
-from trades.choices import TradeStatusChoices
+from trades.choices import TradeStatusChoices, TradeDirectionChoices
 
 
 class Trade(BaseModel):
@@ -25,6 +25,12 @@ class Trade(BaseModel):
     """
 
     status = models.CharField(max_length=20, choices=TradeStatusChoices.choices, default=TradeStatusChoices.OPEN)
+    direction = models.CharField(
+        max_length=10,
+        choices=TradeDirectionChoices.choices,
+        null=True,
+        blank=True
+    )
     opened_at = models.DateTimeField()
     closed_at = models.DateTimeField(null=True, blank=True)
     notes = models.TextField(blank=True)

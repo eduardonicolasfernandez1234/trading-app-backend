@@ -42,6 +42,13 @@ class SignalProvider(BaseModel):
 
     # FK
     signal_source = models.ForeignKey(SignalSource, on_delete=models.CASCADE, related_name='providers')
+    user = models.ForeignKey(
+        'accounts.User',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='signal_providers'
+    )
 
     class Meta:
         verbose_name = 'Signal Provider'

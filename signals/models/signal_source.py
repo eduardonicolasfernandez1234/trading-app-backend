@@ -56,6 +56,17 @@ class SignalSource(BaseModel):
         blank=True
     )
 
+    # Telegram integration
+    telegram_channel_id = models.BigIntegerField(null=True, blank=True)
+    telegram_channel_username = models.CharField(max_length=100, blank=True)
+    telegram_account = models.ForeignKey(
+        'telegram_control.TelegramAccount',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='signal_sources'
+    )
+
     class Meta:
         verbose_name = 'Signal Source'
         verbose_name_plural = 'Signal Sources'

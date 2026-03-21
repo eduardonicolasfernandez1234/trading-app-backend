@@ -27,6 +27,11 @@ class SignalPerformance(BaseModel):
 
     hit_take_profit = models.BooleanField(default=False)
     hit_stop_loss = models.BooleanField(default=False)
+    tp_level_hit = models.PositiveSmallIntegerField(
+        null=True,
+        blank=True,
+        help_text='Which TP level was hit (1, 2, 3, ...)'
+    )
 
     max_favorable_excursion = models.DecimalField(
         max_digits=10,

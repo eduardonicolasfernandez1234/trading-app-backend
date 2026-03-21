@@ -28,6 +28,7 @@ class DirectionChoices(models.TextChoices):
 class SignalStatusChoices(models.TextChoices):
     ACTIVE = 'active', 'Active'
     CANCELLED = 'cancelled', 'Cancelled'
+    EXPIRED = 'expired', 'Expired'
     HIT_TP = 'hit_tp', 'Hit Take Profit'
     HIT_SL = 'hit_sl', 'Hit Stop Loss'
 

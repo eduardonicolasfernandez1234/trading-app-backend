@@ -1,1 +1,1 @@
-from .trade_choices import TradeCloseReasonChoices, TradeEntrySourceChoices, TradeStatusChoices, TradeCostTypeChoices
+from .trade_choices import TradeDirectionChoices, TradeCloseReasonChoices, TradeEntrySourceChoices, TradeStatusChoices, TradeCostTypeChoices

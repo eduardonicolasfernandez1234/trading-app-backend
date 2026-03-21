@@ -49,4 +49,4 @@ class UserProfile(BaseModel):
     )
 
     def __str__(self):
-        return self.display_name or self.user.username
+        return self.display_name or self.user.email

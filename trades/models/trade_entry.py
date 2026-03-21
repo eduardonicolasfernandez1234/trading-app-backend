@@ -20,12 +20,6 @@ class TradeEntry(BaseModel):
     - Pertenece a un Trade.
     """
 
-    ENTRY_SOURCE_CHOICES = (
-        ('manual', 'Manual'),
-        ('bot', 'Bot'),
-        ('api', 'API'),
-    )
-
     entry_price = models.DecimalField(max_digits=12, decimal_places=5)
     lot_size = models.DecimalField(max_digits=10, decimal_places=2)
     opened_at = models.DateTimeField()

@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class TradeDirectionChoices(models.TextChoices):
+    """
+    Direccion de la operacion: compra o venta.
+    """
+    BUY = 'buy', 'Buy'
+    SELL = 'sell', 'Sell'
+
+
 class TradeStatusChoices(models.TextChoices):
     """
     Estados posibles de un trade a nivel lógico.

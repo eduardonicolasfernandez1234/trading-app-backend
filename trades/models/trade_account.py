@@ -25,5 +25,14 @@ class TradeAccount(BaseModel):
     currency = models.CharField(max_length=10, default='USD')
     is_demo = models.BooleanField(default=False)
 
+    # FK
+    user = models.ForeignKey(
+        'accounts.User',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='trade_accounts'
+    )
+
     def __str__(self):
         return f"{self.name} ({self.broker})"

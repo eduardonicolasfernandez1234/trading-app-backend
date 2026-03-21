@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+from accounts.choices import UserRoleChoices
+
 
 class User(AbstractUser):
     """
@@ -21,6 +23,11 @@ class User(AbstractUser):
 
     username = models.CharField(max_length=150, unique=False, blank=True, null=True)
     email = models.EmailField(unique=True)
+    role = models.CharField(
+        max_length=20,
+        choices=UserRoleChoices.choices,
+        default=UserRoleChoices.TRADER
+    )
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
