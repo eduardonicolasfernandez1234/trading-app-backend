@@ -17,7 +17,9 @@
       "Bash(.venv/Scripts/python manage.py makemigrations telegram_control signals)",
       "Bash(.venv/Scripts/python manage.py migrate)",
       "Bash(.venv/Scripts/python -c \":*)",
-      "Bash(.venv/Scripts/python manage.py makemigrations accounts signals trades analytics)"
+      "Bash(.venv/Scripts/python manage.py makemigrations accounts signals trades analytics)",
+      "Bash(.venv/Scripts/python manage.py makemigrations accounts)",
+      "Bash(.venv/Scripts/python manage.py shell -c \":*)"
     ]
   }
 }

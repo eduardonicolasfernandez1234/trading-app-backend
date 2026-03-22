@@ -1,26 +1,18 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from django.contrib.auth import authenticate
 
 
 class EmailTokenObtainPairSerializer(TokenObtainPairSerializer):
     """
     Autenticación usando email y contraseña.
+    Devuelve access, refresh, id, email y role del usuario.
     """
 
     username_field = 'email'
 
     def validate(self, attrs):
-        credentials = {
-            'email': attrs.get('email'),
-            'password': attrs.get('password'),
-        }
-
-        user = authenticate(**credentials)
-
-        if user is None:
-            raise Exception('Credenciales inválidas')
-
+        # super() handles authentication and raises AuthenticationFailed on invalid credentials
         data = super().validate(attrs)
-        data['email'] = user.email
-
+        data['id'] = self.user.id
+        data['email'] = self.user.email
+        data['role'] = self.user.role
         return data

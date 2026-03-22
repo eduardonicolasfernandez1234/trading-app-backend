@@ -3,4 +3,6 @@ from .user_profile_serializer import UserProfileSerializer
 from .user_trading_preference_serializer import UserTradingPreferenceSerializer
 from .user_risk_profile_serializer import UserRiskProfileSerializer
 from .user_notification_setting_serializer import UserNotificationSettingSerializer
+from .register_serializer import RegisterSerializer
+from .change_password_serializer import ChangePasswordSerializer
 

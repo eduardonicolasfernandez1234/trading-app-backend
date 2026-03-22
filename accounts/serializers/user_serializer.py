@@ -16,10 +16,13 @@ class UserSerializer(BaseModelSerializer):
         fields = (
             'id',
             'email',
+            'role',
             'is_active',
             'is_staff',
             'is_superuser',
             'created_at',
             'updated_at',
         )
-        read_only_fields = BaseModelSerializer.Meta.read_only_fields
+        read_only_fields = list(BaseModelSerializer.Meta.read_only_fields) + [
+            'is_active', 'is_staff', 'is_superuser',
+        ]

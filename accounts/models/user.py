@@ -2,9 +2,11 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 from accounts.choices import UserRoleChoices
+from core.managers.custom_user_manager import CustomUserManager
+from core.models import BaseModel
 
 
-class User(AbstractUser):
+class User(AbstractUser, BaseModel):
     """
     Representa al usuario autenticado del sistema.
 
@@ -31,6 +33,10 @@ class User(AbstractUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
+
+    # Override the SoftDeleteManager inherited from BaseModel so that
+    # create_user() and create_superuser() remain available.
+    objects = CustomUserManager()
 
     def __str__(self):
         return self.email
